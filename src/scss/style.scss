@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+/** Подключение шрифтов локально из папки "./src/fonts" */
+@import 'config/fonts';
+
+/** Подключение переменных */
+@import 'config/vars';
+
+/** Подключение sass function и mixins и extends стилей */
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/keyframes';
+
+/** Общие параметры, шаблоны(заготовки) и вспомогательные классы */
+@import 'config/base';
+
+/** БЕМ блоки используемые во всё проекте */
+@import 'config/common';
+
+/** Подключение стилей отдельных блоков и секций */
+@import 'components/ExHeader';
+@import 'components/ExBurger';
+@import 'components/ExBurger-menu';
+@import 'components/ExFooter';
+@import 'components/ExCentered-gallery';
+@import 'components/ExGallery';
+@import 'components/ExAccordion';
+@import 'components/ExCookie';
+@import 'components/ExPopups';

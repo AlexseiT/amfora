@@ -1,0 +1,22 @@
+.accordion {
+    &__container {
+
+    }
+
+    &__title {
+        
+    }
+
+    &__list {
+        width: 100%;
+    }
+
+    &__list-item {
+        border-bottom: 1px solid $borderColor;
+        padding-bottom: 15px;
+    }
+
+    &__list-item-content {
+        padding: 2.5rem 0;
+    }
+}

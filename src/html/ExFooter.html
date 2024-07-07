@@ -1,0 +1,88 @@
+<section class="footer-links">
+    <div class="footer-links__container container">
+        <div class="footer-links__column">
+            <div class="icon-card">
+                <span href="/" class="icon-card__logo-wrapper">
+                    <img src="@img/icons/logo.png" class="icon-card__image" alt="Реабилитационный центр «Независимость»">
+                </span>
+                <div class="icon-card__content">
+                    <span class="text_bold icon-card__title">НЕЗАВИСИМОСТЬ</span>
+                    <span class="icon-card__descr">Центр семейной терапии</span>
+                </div>
+            </div>
+    
+            <div class="icon-card header__info-card">
+                <img src="@img/icons/family-ico.png" class="icon-card__image" alt="">
+                <div class="icon-card__content">
+                    <span class="icon-card__title">20 ЛЕТ</span>
+                    <span class="icon-card__descr">спасаем жизни людей</span>
+                </div>
+            </div>
+    
+            <div class="icon-card header__info-card">
+                <img src="@img/icons/24hours-ico.png" class="icon-card__image" alt="">
+                <div class="icon-card__content">
+                    <a href="tel:73832552829" class="icon-card__title">+7 (383) 255-28-29</a>
+                    <span class="icon-card__descr">Бесплатно. Анонимно. 24/7</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-links__column text">
+            <a href="#" class="footer-links__link">Персонал центра</a>
+            <a href="#" class="footer-links__link">Галерея</a>
+            <a href="#" class="footer-links__link">Цены</a>
+            <a href="#" class="footer-links__link">Отзывы</a>
+            <a href="#" class="footer-links__link">Блог</a>
+            <a href="#" class="footer-links__link">Контакты</a>
+        </div>
+        <div class="footer-links__column text">
+            <a href="#" class="footer-links__link">Лечение наркомании</a>
+            <a href="#" class="footer-links__link">Лечение алкоголизма</a>
+            <a href="#" class="footer-links__link">Кодирование</a>
+            <a href="#" class="footer-links__link">Выведение из запоя</a>
+            <a href="#" class="footer-links__link">Лечение игромании</a>
+        </div>
+        <div class="footer-links__column">
+            <a href="#callback-popup" class="btn footer-links__recall-btn" uk-toggle>
+                <img src="@img/icons/emergency_help.svg" alt="" class="btn__icon footer-links__recall-btn__icon" uk-svg>
+                <span>Экстренная помощь</span>
+            </a>
+            <a href="https://wa.me/79628352829" class="btn footer-links__recall-btn">
+                <img src="@img/icons/socials/whatsapp.svg" alt="" class="btn__icon footer-links__recall-btn__icon" uk-svg>
+                <span>Написать в WhatsApp</span>
+            </a>
+            <a href="https://t.me/+79628352829" class="btn footer-links__recall-btn">
+                <img src="@img/icons/socials/telegram.svg" alt="" class="btn__icon footer-links__recall-btn__icon" uk-svg>
+                <span>Написать в Telegram</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="text footer__container container">
+        <div class="footer__column footer__policy-column">
+            <a href="#" class="footer__policy">Политика конфиденциальности</a>
+            <span class="footer__dev">Разработка сайта <a href="https://dmagroup.ru/" class="footer__dev-link">DMA</a></span>
+            <span class="footer__copyright">© 2024г.</span>
+        </div>
+        <div class="footer__column footer__payment-column">
+            <span class="footer__payment-title">Способы оплаты</span>
+            <div class="footer__payment-images">
+                <img src="@img/footer/cash_pay.png" alt="" class="footer__payment-img">
+                <img src="@img/footer/card_pay.png" alt="" class="footer__payment-img">
+                <img src="@img/footer/visa_pay.png" alt="" class="footer__payment-img">
+                <img src="@img/footer/mastercard-pay.png" alt="" class="footer__payment-img">
+                <img src="@img/footer/mir_pay.png" alt="" class="footer__payment-img">
+            </div>
+        </div>
+        <div class="footer__column footer__warning-column">
+            <span class="footer__warning">
+                Материал носит информационный характер, проконсультируйтесь с врачом.
+                <img src="@img/footer/age_limit.png" alt="" class="footer__warning-age-img">
+            </span>
+        </div>
+    </div>
+
+    @@include('ExPopups.html', {})
+</footer>

@@ -1,0 +1,70 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+//-----------------------------------------
+.uk-input, .uk-select, .uk-textarea {
+    transition: 0.3s;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.uk-accordion-content {
+    margin: 0;
+}
+
+.uk-accordion-title {
+    font-size: inherit;
+    margin: 0;
+
+    :first-child {
+        margin: 0;
+    }
+
+    &::before {
+        width: 1em;
+        height: 1em;
+        background-size: 100%;
+    }
+}
+
+.uk-dotnav>.uk-active>* {
+    transform: scale(1.3);
+    background-color: $baseColor;
+    border-color: transparent;
+}
+
+.uk-dotnav>*>* {
+    width: 1rem;
+    height: 1rem;
+    background-color: $btnBgColor;
+    border: none;
+}
+
+.uk-slidenav {
+    color: $sliderBtnColor;
+}
+
+.uk-lightbox-button {
+    color: $lightboxBtnColor;
+}
+
+.uk-modal-full {
+    background: $overlayColor;
+}
+//-----------------------------------------
+
+.lined-section {
+    &:before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 100px);
+        left: 0%;
+        width: 100%;
+        height: 200px;
+        background: #14C2E7;
+        opacity: 0.1;
+    }
+
+    .container {
+        z-index: 1;
+    }
+}

@@ -1,0 +1,146 @@
+.footer-links {
+    background: linear-gradient(0deg, #FFFFFFBB, #FFFFFFBB), 
+                url(@img/backgrounds/background-abstract-min.jpg) center/cover;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1400px;
+        padding: 40px 0px;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__recall-btn {
+        justify-content: space-between;
+    }
+}
+
+.footer {
+    padding: 15px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1400px;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 25%;
+        gap: 10px;
+    }
+
+    &__payment-column {
+        flex: 0 0 35%;
+        text-align: center;
+    }
+
+    &__warning-column {
+        text-align: right;
+    }
+
+    &__dev-link {
+        color: $btnColor;
+        background: $textColor;
+        padding: 0 5px;
+
+        @include any-hover {
+            color: $btnColor;
+        }
+    }
+
+    &__payment-images {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__payment-img {
+        width: 70px;
+        height: fit-content;
+    }
+
+    &__warning-age-img {
+        width: 1.5em;
+    }
+}
+
+.callback-popup{
+    z-index: 1050;
+
+    &__frame {
+        border-radius: 5px;
+        width: 700px;
+    }
+
+    &__form {
+    }
+
+    &__title {
+        
+    }
+
+    &__content {
+
+    }
+
+    &__phone-input {
+        border-radius: 5px;
+    }
+
+    &__success{
+        z-index: 1050;
+    }
+}
+
+@include media($tablet){
+    .footer-links {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            padding: 40px 0px;
+        }
+    
+        &__column {
+            gap: 10px;
+        }
+    }
+
+    .footer {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        &__column {
+            text-align: center;
+        }
+    
+        &__payment-img {
+            width: 15%;
+        }
+    }
+}
+
+@include media($mobile){
+    .footer {
+        
+    }
+
+    .callback-popup{
+        &__title {
+            font-size: 1.9em;
+        }
+    }
+}
