@@ -1,0 +1,150 @@
+.header {
+    z-index: 100;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $opacity-light;
+    position: fixed;
+    width: 100%;
+    &__container {
+    }
+
+    &__main {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo-wrapper {
+        width: 170px;
+        height: 60px;
+        filter: brightness(1000%);
+        transition: .3s;
+    }
+    &__logo-wrapper:hover{
+        opacity: 0.6;
+    }
+    &__logo {
+    }
+
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-main {
+        gap: 30px;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+        :nth-child(n + 2) a{
+            opacity: .5;
+        }
+        a{
+            color: $light;
+            text-decoration: none;
+        }
+        a:hover{
+            color: $orange;
+            opacity: 1;
+        }
+    }
+    &__menu-main:hover{
+        opacity: 1;
+    }
+    &__menu-item {
+
+        &_orange {
+            padding: 15px 20px;
+            border-radius: 25px;
+            border: 1px solid $orange;
+            transition: .3s;
+            a{
+                color: $orange;
+                opacity: 1 !important;
+            }
+        }
+        &_orange:hover {
+            background-color: $orange;
+            a{
+                color: $light;
+            }
+        }
+    }
+
+
+    &__right-block {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__social {
+        display: flex;
+        gap: 20px;
+        a:hover{
+            color: $orange;
+        }
+    }
+    &__burger-social{
+        a{
+            color: $dark;
+            width: 14px;
+            height: 14px;
+        }
+    }
+    &__main-social{
+        a{
+            color: $light;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__account {
+        color: $light;
+        text-decoration: none;
+    }
+
+    &__burger-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        gap: 8px;
+    }
+    &__burger-button:hover .header__burger-line {
+        background-color: $orange;
+    }
+
+    &__burger-line {
+        height: 2px;
+        width: 30px;
+        background-color: $light;
+        transition: .3s;
+        border-radius: 25px;
+    }
+
+    &__burger {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        &_active{
+            opacity: 1;
+            pointer-events: inherit;
+        }
+    }
+
+    &__burger-logo-wrapper {
+    }
+
+    &__burger-close {
+    }
+
+    &__menu-burger {
+    }
+}
+@include media($tablet) {
+
+}
+@include media($mobile) {
+
+}
