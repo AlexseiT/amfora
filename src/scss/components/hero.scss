@@ -8,11 +8,12 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        animation: scale_anim 25s infinite;
+        overflow: hidden;
     }
 
     &__background-img {
-        filter: brightness(50%)
+        filter: brightness(50%);
+        animation: scale_anim 25s infinite;
     }
 
     &__container {
@@ -23,25 +24,31 @@
 
     &__title {
         color: $white;
+        text-transform: uppercase;
     }
 
     &__description-block {
         color: $white;
         margin-bottom: 10%;
+        display: flex;
+        
     }
 
     &__description {
-        
+        color: $light;
+    }
+    &__button{
+        margin-left: 20%;
     }
 }
-@keyframes scale_anim {
-	0% {
-		transform: scale3d(1, 1, 1);
-	}
-	50% {
-		transform: scale3d(1.15, 1.15, 1.15);
-	}
-	100% {
-		transform: scale3d(1, 1, 1);
-	}
+@include media($mobile) {
+
+    .hero {
+        &__description-block {
+            flex-direction: column;
+        }
+        &__button{
+            margin: 20px 0 0 0;
+        }
+    }
 }

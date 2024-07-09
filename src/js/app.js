@@ -2,7 +2,8 @@ const isMobile = document.documentElement.clientWidth <= 640;
 const isTablet = document.documentElement.clientWidth <= 1200;
 const isLaptop = document.documentElement.clientWidth <= 1440;
 const isDesktop = document.documentElement.clientWidth > 1440;
-
+const scrollParam = 200;
+const revealParam = 10;
 function isWebp() {
     // Проверка поддержки webp
     const testWebp = (callback) => {
@@ -204,7 +205,22 @@ async function EnableSubmitOnCheckbox(){
 		}
 	});
 }
+function RevealInit() {
+    let reveals = document.querySelectorAll(".reveal");
+    let windowHeight = window.innerHeight;
+    reveals.forEach(reveal => {
+        let elementTop = reveal.getBoundingClientRect().top;
 
+        if (elementTop < windowHeight + revealParam) {
+            reveal.classList.add("reveal_active");
+        }
+        else {
+            reveal.classList.remove("reveal_active");
+        }
+    });
+
+}
+/*
 function InitBurgerMenu() {
     const burgerNode = document.querySelector('.header__burger-btn');
     if (burgerNode) {
@@ -214,7 +230,7 @@ function InitBurgerMenu() {
         });
     }
 }
-
+*/
 function InitCityPopup() {
     if (document.cookie.includes("selectedCity")) {
         return;
@@ -292,8 +308,55 @@ async function InitLoadMorePosts() {
         });
     }
 }
+function CheckScroll(){
+    if(window.scrollY > scrollParam) {
+        return true;
+    }
+    return false;
+}
+function InitBurgerMenu(){
+    let button_open = document.getElementById("burger-open");
+    let burger_menu = document.getElementById("burger-menu");
+    let burger_close = document.getElementById("burger-close");
+    let burger_tint = document.getElementById("burger-tint");
+    if (button_open)
+    {
+        button_open.addEventListener('click', (event) => {
+            burger_menu.classList.add("header__burger_active");
+            if(CheckScroll()) {
+                burger_tint.classList.add("header__burger-tint_active");
+            }
+        });
+        burger_close.addEventListener('click', (event) => {
+            burger_menu.classList.remove("header__burger_active");
+            burger_tint.classList.remove("header__burger-tint_active");
+        });
+    }
+}
+function InitAdaptiveScrollHeader(){
+    let header = document.querySelector("header");
+    let burger_menu = document.getElementById("burger-menu");
+    let burger_tint = document.getElementById("burger-tint");
+    document.addEventListener('scroll', (event) => {
+            if(CheckScroll()) {
+                header.classList.add("header_active");
+                if (burger_menu.classList.contains("header__burger_active"))
+                {
+                    burger_tint.classList.add("header__burger-tint_active");
+                }
+            }
+            if(!CheckScroll()) {
+                header.classList.remove("header_active");
+                if (burger_menu.classList.contains("header__burger_active"))
+                {
+                    burger_tint.classList.remove("header__burger-tint_active");
+                }
+            }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
     // ASYNC
     InitCenteredSliders();      // Преключение класса центрального слайда при свайпах
     CallbackFormInit();         // Инцициализация всех форм (Маска тел. + ajax на submit)
@@ -301,15 +364,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // InitLoadMorePosts();        // Инит кнопки "Загрузить еще" для постов, см. WP ExBlog.php, functions.php
     // END ASYNC
 
+    InitBurgerMenu();
     InitCityPopup();
 	InitCookieAgree();
-
+    InitAdaptiveScrollHeader();
+    RevealInit();
+    window.addEventListener("scroll", RevealInit);
     // InsertPostContents();    // Содержание статьи по заголовкам
     // LoadMapOnScroll();       // Прогрузка карты при скролле
 
-    if(isTablet) {
-        InitBurgerMenu();
-    }
 
     // Наложение партикла
     // particlesJS.load('particles-slider', 'static/ParticlesJSON/GreenHexagons.json');

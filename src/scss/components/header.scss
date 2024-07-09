@@ -5,12 +5,14 @@
     border-bottom: 1px solid $opacity-light;
     position: fixed;
     width: 100%;
+    transition: .3s;
     &__container {
+        z-index: 2;
     }
 
     &__main {
         display: flex;
-        gap: 30px;
+        gap: 15px;
         justify-content: space-between;
         align-items: center;
     }
@@ -32,12 +34,13 @@
     }
 
     &__menu-main {
+        padding: 0;
         gap: 30px;
         list-style: none;
         align-items: center;
         justify-content: center;
         :nth-child(n + 2) a{
-            opacity: .5;
+            opacity: .7;
         }
         a{
             color: $light;
@@ -51,7 +54,7 @@
     &__menu-main:hover{
         opacity: 1;
     }
-    &__menu-item {
+    &__menu-main .header__menu-item {
 
         &_orange {
             padding: 15px 20px;
@@ -59,14 +62,14 @@
             border: 1px solid $orange;
             transition: .3s;
             a{
-                color: $orange;
+                color: $orange !important;
                 opacity: 1 !important;
             }
         }
         &_orange:hover {
             background-color: $orange;
             a{
-                color: $light;
+                color: $light !important;
             }
         }
     }
@@ -81,14 +84,15 @@
         display: flex;
         gap: 20px;
         a:hover{
-            color: $orange;
+            color: $orange !important;
         }
     }
     &__burger-social{
+        margin-top: 30px;
         a{
             color: $dark;
-            width: 14px;
-            height: 14px;
+            width: 30px;
+            height: 30x;
         }
     }
     &__main-social{
@@ -102,7 +106,9 @@
         color: $light;
         text-decoration: none;
     }
-
+    &__account:hover {
+        color: $orange !important;
+    }
     &__burger-button {
         display: flex;
         flex-direction: column;
@@ -122,11 +128,32 @@
         transition: .3s;
         border-radius: 25px;
     }
-
+    &__burger-tint{
+        transition: .3s;
+        background-color: $dark;
+        opacity: .4;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: 99;
+        position: fixed;
+        display: none;
+        &_active{
+            display: block;
+        }
+    }
     &__burger {
+        width: 390px;
+        position: relative;
+        padding: 45px 40px 30px 40px;
+        background-color: $light;
         opacity: 0;
         pointer-events: none;
         position: absolute;
+        top: -30px;
+        right: -30px;
+        transition: .4s;
         &_active{
             opacity: 1;
             pointer-events: inherit;
@@ -134,17 +161,206 @@
     }
 
     &__burger-logo-wrapper {
+        width: 112px;
+        height: 40px;
+        display: flex;
     }
 
     &__burger-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 45px;
+        top: 45px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &::before{
+            content: "";
+            height: 2px;
+            width: 30px;
+            background-color: $dark;
+            border-radius: 25px;
+            position: absolute;
+            transform: rotate(45deg);
+            transition: .3s;
+        }
+        &::after{
+            content: "";
+            height: 2px;
+            width: 30px;
+            background-color: $dark;
+            border-radius: 25px;
+            position: absolute;
+            transform: rotate(-45deg);
+            transition: .3s;
+        }
     }
-
+    &__burger-close:hover{
+        &::before{
+            background-color: $orange;
+        }
+        &::after{
+            background-color: $orange;
+        }
+    }
     &__menu-burger {
+        flex-direction: column;
+        gap: 10px;
+        padding: 30px 0;
+        border-bottom: 1px solid $gray;
+        a{
+            text-decoration: none;
+        }
+    }
+    &__menu-burger .header__menu-item {
+        list-style-type: none;
+
+        a{
+            opacity: 0.5;
+        }
+        a:hover{
+            opacity: 1;
+            color: $dark;
+        }
+
+        &_orange {
+            opacity: 1;
+            transition: .3s;
+            a{
+                color: $orange;
+                opacity: 1 !important;
+            }
+        }
+        &_orange:hover {
+            a{
+                color: $dark;
+            }
+        }
+    }
+    &__develop{
+        display: block;
+        margin-top: 20px;
+        a{
+            color: $orange;
+        }
+        a:hover{
+            color: $dark;
+        }
+    }
+    &_active{ /*Скролл меню*/
+        background-color: $light;
+        border-bottom: 1px solid $gray;
+        .header{
+            &__logo-wrapper {
+                filter: inherit;
+            }
+            &__main-social{
+                a{
+                    color: $dark;
+                }
+            }
+            &__menu-main {
+                a{
+                    color: $dark;
+                }
+
+            }
+            &__burger-line {
+                background-color: $dark;
+            }
+            &__account {
+                color: $dark;
+            }
+        }
+    }
+}
+@include media($customTablet) {
+    
+    .header {
+        &__menu-main .header__menu-item{
+            display: none;
+            &_orange{
+                display: block;
+            }
+        }
+
     }
 }
 @include media($tablet) {
-
+    .header{
+        &__main-social{
+            display: none;
+        }
+    }
 }
 @include media($mobile) {
+    .header{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: none;
+        &__logo-wrapper {
+            width: 90px;
+            height: 30px;
+        }
+        &__main {
+            gap: 7px;
+        }
+        &__right-block{
+            gap: 7px;     
+        }
+        &__account{
+            width: max-content;
+        }
+        &__burger{
+            top: -15px;
+            right: 0px;
+            padding: 30px 15px;
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        &__menu-burger{
+            text-align: center;
+        }
+        &__burger-close{
+            top: 30px;
+            right: 15px;
+        }
+        &__menu-main .header__menu-item{
+            &_orange{
+                padding: 9px;
+                width: max-content;
+            }
+        }
+        &__burger-social{
+            justify-content: center;
+        }
+        &__develop{
+            text-align: center;
+        }
+        &__burger-line {
+            width: 25px;
+        }
+        &__burger-close {
 
+            &::before{
+                width: 25px;
+            }
+            &::after{
+                width: 25px;
+            }
+        }
+    }
+}
+@include media($customMobile) {
+    .header{
+        &__menu-main .header__menu-item{
+            &_orange{
+                display: none;
+            }
+        }
+    }
 }
