@@ -261,6 +261,106 @@ textarea{
         width: 700px;
     }
 }*/
+.base {
+    &__cards {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    &__card {
+        height: 380px;
+        width: auto;
+        position: relative;
+        cursor: pointer;
+        &:nth-child(1){
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        &:nth-child(6){
+            grid-column: 5 / 3;
+            grid-row: 2;
+        }
+        &:hover{
+            .base{
+                &__img{
+                    filter: brightness(30%);
+                    animation: scale_anim 15s infinite;
+                }
+            }
+        }
+    }
+    &__content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 65px 30px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        h3{
+            color: $light;
+        }
+    }
+    &__img-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    &__img {
+        filter: brightness(50%);
+        pointer-events: none;
+    }
+}
+
+@include media($tablet) {
+    .base{
+        &__card {
+            height: 280px;
+
+        }
+        &__content{
+            padding: 30px 20px;
+        }
+    }
+}
+@include media($tabletMobile) {
+    .base{
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+            :nth-child(1){
+                grid-column: 1;
+                grid-row: inherit;
+            }
+            :nth-child(6){
+                grid-column: inherit;
+                grid-row: inherit;
+            }
+        }
+    }
+}
+@include media($mobile) {
+    .base {
+        &__cards {
+            gap: 2px;
+            grid-template-columns: 1fr 1fr;
+            :nth-child(1){
+                grid-column: 1;
+                grid-row: inherit;
+            }
+            :nth-child(6){
+                grid-column: inherit;
+                grid-row: inherit;
+            }
+        }
+        &__card {
+            height: 195px;
+        }
+        &__content{
+            padding: 20px 10px 40px;
+        }
+    }
+}
 .button{
     padding: 16px 20px;
     border-radius: 25px;

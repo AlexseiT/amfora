@@ -1,0 +1,20 @@
+.production {
+    &__button {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+    }
+}
+@include media($tablet) {
+
+}
+@include media($mobile) {
+    .production {
+        &__button {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+    }
+}
+
