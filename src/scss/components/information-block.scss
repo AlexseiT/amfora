@@ -54,10 +54,10 @@
 
     &__card-title {
         h3{
-            color: $white;
+            color: var(--white);
         }
         &_accent {
-            color: $white;
+            color: var(--white);
         }
     }
 }

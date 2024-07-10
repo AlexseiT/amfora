@@ -354,7 +354,30 @@ function InitAdaptiveScrollHeader(){
             }
     });
 }
-
+function InitMapContacts(){
+    let map_object = document.getElementById("contacts-map");
+    if (map_object){
+        let map = new ymaps.Map(map_object, {
+            center: [66.25, 94.15],
+            zoom: 3,
+        });
+        let contact_cards = document.querySelectorAll(".contacts__card");
+        contact_cards.forEach(card => {
+            let lat = parseFloat(card.getAttribute("lat"));
+            let lon = parseFloat(card.getAttribute("lon"));
+            let placemark = new ymaps.Placemark([lat,lon], {
+     
+            }, {
+                preset: 'islands#orangeDotIcon'
+            });
+            map.geoObjects.add(placemark);
+            card.addEventListener('click', function (event) {
+                map.setZoom(15);
+                map.panTo([lat,lon]);
+            })
+        });
+    }
+}
 document.addEventListener('DOMContentLoaded', (event) => {
 
     // ASYNC
@@ -369,6 +392,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	InitCookieAgree();
     InitAdaptiveScrollHeader();
     RevealInit();
+    setTimeout(() => {
+        InitMapContacts();
+    }, 1000);
     window.addEventListener("scroll", RevealInit);
     // InsertPostContents();    // Содержание статьи по заголовкам
     // LoadMapOnScroll();       // Прогрузка карты при скролле

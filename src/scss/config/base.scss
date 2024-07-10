@@ -1,6 +1,17 @@
 * {
     box-sizing: border-box;
 }
+//var(--main);
+:root {
+    --light: #FAF8F6;
+    --light-accent: #F3F0EF;
+    --gray: #b9b8b6;
+    --opacity-light: #FAF8F64D;
+    --dark: #282827;
+    --white: #FFFFFF;
+    --black: #181817;
+    --orange: #FF5C00;
+  }
 
 html, body {
     overflow-x: hidden;
@@ -9,12 +20,13 @@ html, body {
 
 html {
     font-size: 16px;
+    color: var(--dark);
 }
 
 body {
-    background-color: $light; /*Поменять*/
+    background-color: var(--light); /*Поменять*/
     overflow-y: hidden;
-    font-family: 'Raleway';
+    font-family: 'ClearSans';
     line-height: 1.2;
 
     min-height: 100vh;
@@ -25,7 +37,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: $dark;
     font-weight: bold;
-    font-family: 'Raleway';
+    font-family: 'ClearSans';
 
 }
 
@@ -60,12 +72,16 @@ a{
     transition: .3s;
     text-decoration: none;
     @include any-hover {
-        color: $dark;
+        color: var(--dark);
+        opacity: 0.7;
     }
+}
+button{
+    cursor: pointer;
+    transition: .3s;
 }
 a:hover{
     text-decoration: none;
-    transition: .3s;
 }
 a[href*="tel:"] {
     white-space: nowrap;
@@ -80,7 +96,7 @@ ul{
 }
 input{
     &:focus{
-        border-color: $orange;
+        border-color: var(--orange);
     }
 
     &:focus-visible {
@@ -91,13 +107,13 @@ input{
 
 select{
     &:focus{
-        border-color: $orange;
+        border-color: var(--orange);
     }
 }
 
 textarea{
     &:focus{
-        border-color: $orange;
+        border-color: var(--orange);
     }
 
     &:focus-visible {
@@ -136,6 +152,12 @@ textarea{
     color: $dark;
     font-size: 18px;
     font-weight: 400;
+    &_max{
+        font-size: 52px;
+    }
+    &_average{
+        font-size: 28px;
+    }
     &_button{
         font-size: 16px;
     }
@@ -299,7 +321,7 @@ textarea{
         flex-direction: column;
         justify-content: end;
         h3{
-            color: $light;
+            color: var(--light);
         }
     }
     &__img-wrapper {
@@ -370,18 +392,32 @@ textarea{
     justify-content: space-between;
     width: fit-content;
 }
+.button_black{
+    padding: 0;
+    color: var(--light);
+    background-color: transparent;
+    border: none;
+}
 .button:hover{
-    color: $light;
-    background-color: $orange;
+    color: var(--light);
+    background-color: var(--orange);
     opacity: 0.8;
 }
 .button_standart{
     color: $dark;
-    background-color: $light;
+    background-color: var(--light);
+}
+.button_border{
+    border: 1px solid var(--dark);
 }
 .button_orange{
     color: $light;
-    background-color: $orange;
+    background-color: var(--orange);
+}
+.button_black:hover{
+    color: var(--orange);
+    background-color: transparent;
+    opacity: 1;
 }
 .button_circle{
     width: 45px;
@@ -438,6 +474,9 @@ textarea{
         &_descriptor{
             font-size: 16px;
         }
+        &_average{
+            font-size: 28px;
+        }
     }
 }
 @include media($tablet) {
@@ -463,6 +502,14 @@ textarea{
     }
     section{
         margin-top: 90px;
+    }
+    .text{
+        &_max{
+            font-size: 28px;    
+        }
+        &_average{
+            font-size: 20px;
+        }
     }
 }
 
@@ -494,6 +541,9 @@ textarea{
     }
     .text{
         font-size: 14px;
+        &_max{
+            font-size: 20px;    
+        }
         &_button{
             font-size: 14px;
         }
@@ -503,11 +553,52 @@ textarea{
         &_descriptor{
             font-size: 14px;
         }
+        &_average{
+            font-size: 14px;
+        }
     }
+
     section{
         margin-top: 50px;
     }
 }
+
+.loader_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border:10px solid var(--light);
+    border-radius: 50%;
+    position: absolute;
+    transform:rotate(45deg);
+    box-sizing: border-box;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    inset:-10px;
+    border-radius: 50%;
+    border:10px solid var(--orange);
+    animation: prixClipFix 1s infinite linear;
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }
+
+
 @include media($tablet) {
 
 }

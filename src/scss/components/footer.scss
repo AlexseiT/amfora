@@ -1,0 +1,200 @@
+.footer {
+    margin-top: 160px;
+    background-color: black;
+    &__container {
+    }
+
+    &__up {
+        margin-top: 90px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        color: var(--light);
+
+    }
+
+
+    &__logo-wrapper {
+        width: 237px;
+        height: 85px;
+    }
+
+    &__logo {
+        filter: brightness(1000%);
+    }
+    &__logo-wrapper:hover {
+        opacity: .7;
+    }
+
+    &__social {
+        margin-top: 25px;
+        display: flex;
+        gap: 20px;
+        a{
+            width: 45px;
+            height: 45px;
+            color: var(--light);
+        }
+        a:hover{
+            color: var(--orange);
+        }
+        circle{
+            fill: none;
+        }
+    }
+
+
+    &__block-title {
+        opacity: .5;
+    }
+
+
+    &__menu {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        gap: 10px;
+    }
+
+    &__menu-item {
+        a{
+            color: var(--light);
+        }
+        a:hover{
+            color: var(--orange);
+        }
+    }
+
+
+    &__form {
+        margin-top: 40px;
+        width: 300px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+
+    &__input {
+        border: none;
+        border-bottom: 1px solid var(--opacity-light);
+        padding: 8px 0;
+        background-color: transparent;
+        color: $light;
+        &::placeholder{
+            font-size: 16px;
+        }
+    }
+
+
+    &__button {
+        margin-top: 35px;
+    }
+
+
+    &__down {
+        margin-top: 35px;
+        padding-top: 18px;
+        padding-bottom: 100px;
+        border-top: 2px solid var(--opacity-light);
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__description-left {
+        color: var(--opacity-light);
+    }
+
+
+    &__description-right {
+        display: flex;
+        gap: 37px;
+    }
+
+
+    &__link-politics {
+        color: var(--opacity-light);
+    }
+    &__link-politics:hover {
+        color: var(--orange);
+    }
+
+    &__develop {
+        color: var(--opacity-light);
+        a{
+            color: var(--orange);
+        }
+        a:hover{
+            color: var(--opacity-light);
+        }
+    }
+}
+@include media($tablet) {
+    .footer{
+        margin-top: 90px;
+    }
+}
+@include media($tabletMobile) {
+    .footer{
+        &__logo-wrapper {
+            width: 150px;
+            height: 60px;
+        }
+        &__up {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 0px;
+            .footer__block:nth-child(1){
+                grid-row: 1;
+                grid-column: 1/3;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer__block:nth-child(4){
+                grid-row: 3;
+                grid-column: 1/3;
+            }
+        }
+        &__down {
+            margin-top: 5px;
+            padding-top: 25px;
+            padding-bottom: 50px;
+            border-top: 2px solid var(--dark);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        &__description-right {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        &__social {
+            gap: 6px;
+            a{
+                width: 38px;
+                height: 38px;
+            }
+        }
+        &__form{
+            width: 100%;    
+        }
+    }
+}
+@include media($mobile) {
+    .footer{
+        margin-top: 50px;
+    }
+}

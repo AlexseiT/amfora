@@ -25,8 +25,8 @@
         align-items: center;
         gap: 30px;
         padding: 0px 78px;
-        border-left: 1.5px solid $gray;
-        border-right: 1.5px solid $gray;
+        border-left: 1.5px solid var(--gray);
+        border-right: 1.5px solid var(--gray);
         &_start-border{
             border-left: none;
         }
@@ -127,7 +127,7 @@
             }
         }
         &__icon {
-            color: $orange;
+            color: var(--orange);
             animation: none;
         }
         &__wrapper-icon {

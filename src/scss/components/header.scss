@@ -2,7 +2,7 @@
     z-index: 100;
     padding-top: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid $opacity-light;
+    border-bottom: 1px solid var(--opacity-light);
     position: fixed;
     width: 100%;
     transition: .3s;
@@ -43,7 +43,7 @@
             opacity: .7;
         }
         a{
-            color: $light;
+            color: var(--light);
             text-decoration: none;
         }
         a:hover{
@@ -59,17 +59,17 @@
         &_orange {
             padding: 15px 20px;
             border-radius: 25px;
-            border: 1px solid $orange;
+            border: 1px solid var(--orange);
             transition: .3s;
             a{
-                color: $orange !important;
+                color: var(--orange) !important;
                 opacity: 1 !important;
             }
         }
         &_orange:hover {
-            background-color: $orange;
+            background-color: var(--orange);
             a{
-                color: $light !important;
+                color: var(--light) !important;
             }
         }
     }
@@ -84,30 +84,30 @@
         display: flex;
         gap: 20px;
         a:hover{
-            color: $orange !important;
+            color: var(--orange) !important;
         }
     }
     &__burger-social{
         margin-top: 30px;
         a{
-            color: $dark;
+            color: var(--dark);
             width: 30px;
             height: 30x;
         }
     }
     &__main-social{
         a{
-            color: $light;
+            color: var(--light);
             width: 20px;
             height: 20px;
         }
     }
     &__account {
-        color: $light;
+        color: var(--light);
         text-decoration: none;
     }
     &__account:hover {
-        color: $orange !important;
+        color: var(--orange) !important;
     }
     &__burger-button {
         display: flex;
@@ -118,19 +118,19 @@
         gap: 8px;
     }
     &__burger-button:hover .header__burger-line {
-        background-color: $orange;
+        background-color: var(--orange);
     }
 
     &__burger-line {
         height: 2px;
         width: 30px;
-        background-color: $light;
+        background-color: var(--light);
         transition: .3s;
         border-radius: 25px;
     }
     &__burger-tint{
         transition: .3s;
-        background-color: $dark;
+        background-color: var(--dark);
         opacity: .4;
         width: 100vw;
         height: 100vh;
@@ -147,7 +147,7 @@
         width: 390px;
         position: relative;
         padding: 45px 40px 30px 40px;
-        background-color: $light;
+        background-color: var(--light);
         opacity: 0;
         pointer-events: none;
         position: absolute;
@@ -180,7 +180,7 @@
             content: "";
             height: 2px;
             width: 30px;
-            background-color: $dark;
+            background-color: var(--dark);
             border-radius: 25px;
             position: absolute;
             transform: rotate(45deg);
@@ -190,7 +190,7 @@
             content: "";
             height: 2px;
             width: 30px;
-            background-color: $dark;
+            background-color: var(--dark);
             border-radius: 25px;
             position: absolute;
             transform: rotate(-45deg);
@@ -199,17 +199,17 @@
     }
     &__burger-close:hover{
         &::before{
-            background-color: $orange;
+            background-color: var(--orange);
         }
         &::after{
-            background-color: $orange;
+            background-color: var(--orange);
         }
     }
     &__menu-burger {
         flex-direction: column;
         gap: 10px;
         padding: 30px 0;
-        border-bottom: 1px solid $gray;
+        border-bottom: 1px solid var(--gray);
         a{
             text-decoration: none;
         }
@@ -222,20 +222,20 @@
         }
         a:hover{
             opacity: 1;
-            color: $dark;
+            color: var(--dark);
         }
 
         &_orange {
             opacity: 1;
             transition: .3s;
             a{
-                color: $orange;
+                color: var(--orange);
                 opacity: 1 !important;
             }
         }
         &_orange:hover {
             a{
-                color: $dark;
+                color: var(--dark);
             }
         }
     }
@@ -243,35 +243,35 @@
         display: block;
         margin-top: 20px;
         a{
-            color: $orange;
+            color: var(--orange);
         }
         a:hover{
-            color: $dark;
+            color: var(--dark);
         }
     }
     &_active{ /*Скролл меню*/
-        background-color: $light;
-        border-bottom: 1px solid $gray;
+        background-color: var(--light);
+        border-bottom: 1px solid var(--gray);
         .header{
             &__logo-wrapper {
                 filter: inherit;
             }
             &__main-social{
                 a{
-                    color: $dark;
+                    color: var(--dark);
                 }
             }
             &__menu-main {
                 a{
-                    color: $dark;
+                    color: var(--dark);
                 }
 
             }
             &__burger-line {
-                background-color: $dark;
+                background-color: var(--dark);
             }
             &__account {
-                color: $dark;
+                color: var(--dark);
             }
         }
     }

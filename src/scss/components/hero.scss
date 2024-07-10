@@ -28,14 +28,14 @@
     }
 
     &__description-block {
-        color: $white;
+        color: var(--white);
         margin-bottom: 10%;
         display: flex;
         
     }
 
     &__description {
-        color: $light;
+        color: var(--light);
     }
     &__button{
         margin-left: 20%;
