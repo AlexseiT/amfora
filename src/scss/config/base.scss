@@ -427,6 +427,10 @@ textarea{
     justify-content: center;
     align-items: center;
 }
+.button_border:hover{
+    background-color: transparent; 
+    color: var(--dark);
+}
 .reveal{
 }
 .reveal_min{

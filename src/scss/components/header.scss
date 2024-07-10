@@ -57,6 +57,7 @@
     &__menu-main .header__menu-item {
 
         &_orange {
+            cursor: pointer;
             padding: 15px 20px;
             border-radius: 25px;
             border: 1px solid var(--orange);
@@ -67,9 +68,10 @@
             }
         }
         &_orange:hover {
-            background-color: var(--orange);
+            /*background-color: var(--orange);*/
+            opacity: .7;
             a{
-                color: var(--light) !important;
+                /*color: var(--light) !important;*/
             }
         }
     }

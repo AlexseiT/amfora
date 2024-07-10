@@ -357,23 +357,37 @@ function InitAdaptiveScrollHeader(){
 function InitMapContacts(){
     let map_object = document.getElementById("contacts-map");
     if (map_object){
+        let contact_card = document.querySelector(".contacts__card");
+        let start_lat = 66.25;
+        let start_lon = 94.15;
+        if (contact_card){
+            start_lat = parseFloat(contact_card.getAttribute("lat"));
+            start_lon = parseFloat(contact_card.getAttribute("lon"));
+        }
         let map = new ymaps.Map(map_object, {
-            center: [66.25, 94.15],
+            center: [start_lat, start_lon],
             zoom: 3,
         });
         let contact_cards = document.querySelectorAll(".contacts__card");
         contact_cards.forEach(card => {
             let lat = parseFloat(card.getAttribute("lat"));
             let lon = parseFloat(card.getAttribute("lon"));
-            let placemark = new ymaps.Placemark([lat,lon], {
-     
-            }, {
-                preset: 'islands#orangeDotIcon'
-            });
+
+            let placemark = new ymaps.Placemark(
+                [lat,lon],{
+
+                    },
+                {
+                iconLayout: 'default#image',
+                iconImageHref: '/images/point.png',
+                iconImageSize: [31, 40]
+                }
+            );
             map.geoObjects.add(placemark);
             card.addEventListener('click', function (event) {
                 map.setZoom(15);
                 map.panTo([lat,lon]);
+                if (isMobile) map_object.scrollIntoView();
             })
         });
     }
