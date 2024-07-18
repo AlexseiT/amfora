@@ -40,6 +40,18 @@
     &__button{
         margin-left: 20%;
     }
+    &__buttons-other-page{
+        margin-left: 35%;
+        gap: 20px;
+    }
+}
+@include media($tablet){
+    .hero {
+        &__buttons-other-page{
+            margin-left: 20%;
+            gap: 20px;
+        }
+    }
 }
 @include media($mobile) {
 
@@ -54,6 +66,22 @@
             width: 139%;
             height: 100%;
             transform: translateX(-120px);
+        }
+        &__buttons-other-page{
+            flex-direction: row;
+            margin-left: 0;
+            gap: 10px;
+        }
+    }
+}
+@include media($customMobile) {
+
+    .hero {
+        &__buttons-other-page{
+            flex-direction: column;
+            a{
+                width: 100%;
+            }
         }
     }
 }

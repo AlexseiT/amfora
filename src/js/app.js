@@ -392,6 +392,23 @@ function InitMapContacts(){
         });
     }
 }
+function InitInputsCatalogFilter()
+{
+    console.log(1);
+    let inputs = document.querySelectorAll(".catalog__filter-input");
+    inputs.forEach(input => { 
+        let id_dropdown = input.id + "-dropdown";
+        let dropdown = document.getElementById(id_dropdown);
+        let list = dropdown.querySelectorAll("li");
+        list.forEach(item => { 
+            item.addEventListener('click', (event) => {
+                let value = item.getAttribute("form-value");
+                input.value = value;
+                console.log(1);
+            });
+        });
+    });
+}
 document.addEventListener('DOMContentLoaded', (event) => {
 
     // ASYNC
@@ -406,6 +423,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	InitCookieAgree();
     InitAdaptiveScrollHeader();
     RevealInit();
+    InitInputsCatalogFilter();
     setTimeout(() => {
         InitMapContacts();
     }, 1000);

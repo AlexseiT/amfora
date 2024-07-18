@@ -1,0 +1,538 @@
+<section class = "catalog section_main">
+    <div class = "container catalog__container">
+        <div class = "catalog__title-row">
+            <div class = "catalog__title">
+                <h1 class = "text_max">Каталог</h1>
+                <span class = "catalog__number-prefix text_descriptor">134</span>
+            </div>
+            <div class = "catalog__sort-buttons">
+                <a href = "#" class = "button button_transparent-black catalog__sort-button text_button">Малый</a>
+                <a href = "#" class = "button button_transparent-black catalog__sort-button text_button">Средний</a>
+                <a href = "#" class = "button button_transparent-black catalog__sort-button text_button">Большой</a>
+                <a href = "#" class = "button button_transparent-black catalog__sort-button text_button">Премиум</a>
+            </div>
+
+            <a href = "#" class = "catalog__sort-button_last">
+                <div class = "button button_transparent-black button_transparent-black-opacity text_button catalog__sort-button_deckstop">Сортировать<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></div>
+                <div class = "catalog__sort-button_mobile"><img class = "img_contain" src = "@img/sort.svg"></div>
+            </a>
+            <div id = "sort-input-dropdown" uk-dropdown class = "catalog__sort-dropdown"> 
+                <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                    <li form-value = ""><a href = "#">По цене</a></li>
+                    <li form-value = ""><a href = "#">По толщине</a></li>
+                    <li form-value = ""><a href = "#">По диаметру</a></li>
+                    <li form-value = ""><a href = "#">По высоте</a></li>
+                    <li form-value = ""><a href = "#">По весу</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class = "catalog__filter-row">
+            <form id = "catalog-filter" class = "catalog__filter">
+                <div class = "catalog__filter-inputs">
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "price-input" class = "catalog__filter-input" name = "price" placeholder = "Цена" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "price-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Цена</li>
+                            <li form-value = "до 10000 ₽">до 10 000 ₽</li>
+                            <li form-value = "до 20000 ₽">до 20 000 ₽</li>
+                            <li form-value = "до 30000 ₽">до 30 000 ₽</li>
+                        </ul>
+                    </div>
+
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "width-input" class = "catalog__filter-input" name = "width" placeholder = "Толщина" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "width-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Толщина</li>
+                            <li form-value = "5 см">5 см</li>
+                            <li form-value = "6 см">6 см</li>
+                            <li form-value = "7 см">7 см</li>
+                        </ul>
+                    </div>
+
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "height-input" class = "catalog__filter-input" name = "height" placeholder = "Высота" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "height-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Высота</li>
+                            <li form-value = "63 см">63 см</li>
+                            <li form-value = "64 см">64 см</li>
+                            <li form-value = "65 см">65 см</li>
+                        </ul>
+                    </div>
+
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "weight-input" class = "catalog__filter-input" name = "weight" placeholder = "Вес" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "weight-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Вес</li>
+                            <li form-value = "53 кг">53 кг</li>
+                            <li form-value = "54 кг">54 кг</li>
+                            <li form-value = "55 кг">55 кг</li>
+                        </ul>
+                    </div>
+
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "diameter-input" class = "catalog__filter-input" name = "diameter" placeholder = "Диаметр" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "diameter-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Диаметр</li>
+                            <li form-value = "45 см">45 см</li>
+                            <li form-value = "50 см">50 см</li>
+                            <li form-value = "55 см">55 см</li>
+                        </ul>
+                    </div>
+
+                    <div class = "catalog__filter-input-block catalog__filter-input-block_width">
+                        <input id = "item-input" class = "catalog__filter-input" name = "item" placeholder = "Наличие" readonly>
+                        <img src = "@img/arrow-list.svg" class = "catalog__filter-arrow">
+                    </div>
+                    <div id = "item-input-dropdown" uk-dropdown class = "catalog__filter-dropdown catalog__filter-input-block_width"> 
+                        <ul class="uk-nav uk-dropdown-nav text_descriptor">
+                            <li form-value = "">Наличие</li>
+                            <li form-value = "В наличии">В наличии</li>
+                            <li form-value = "Нет в наличии">Нет в наличии</li>
+                        </ul>
+                    </div>
+                </div>
+                <button type = "submit" class = "button button_orange catalog__button-submit text_button">Применить</button>
+            </form>
+        </div>
+        <div class = "catalog__row">
+            <div class = "catalog__category">
+                <span class = "text_average text_bold">Категории</span>
+                <ul class = "catalog__category-list text_descriptor">
+
+                    <li class = "catalog__category-item catalog__category-item_active">
+                        <a href = "#">
+                            <span>Все</span>
+                            <span>63</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Тандыры со съёмными крышками</span>
+                            <span>11</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Тандыры с откидными крышками</span>
+                            <span>13</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Аксессуары</span>
+                            <span>95</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Комплектующие</span>
+                            <span>51</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Декор</span>
+                            <span>6</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Керамические грили</span>
+                            <span>9</span>
+                        </a>
+                    </li>
+
+                    <li class = "catalog__category-item">
+                        <a href = "#">
+                            <span>Бестселлеры</span>
+                            <span>27</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <a href = "#" class = "button button_standart catalog__category-button text_button">Сбросить фильтр</a>
+            </div>
+     
+            <div class = "catalog__cards-block">
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "catalog__card">
+                    <div uk-slider class = "catalog__card-img">
+                        <div class="uk-position-relative catalog__card-slider-img">
+                            <div class="uk-slider-container uk-light">
+                                <div class="uk-slider-items uk-child-width-1">
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div>
+                                    <div class = "catalog__card-slider-img-wrapper">
+                                        <img src="@img/catalog-item.png">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>      
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>   
+                        <div class = "catalog__card-like-wrapper"><img class = "catalog__card-like" src = "@img/like.svg" uk-svg></div>
+                    </div>
+                    <div class = "catalog__card-content">
+                        <a href = "#" class = "catalog__card-name text_average">Тандыр кочевник</a>
+                        <span class = "catalog__card-price text_average text_bold">10 900 ₽</span>
+                        <div class = "catalog__card-info text_caption">
+                            <div class = "catalog__card-info-item"><span>Толщина: </span><span>5 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Диаметр: </span><span>45 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Высота: </span><span>63 см</span></div>
+                            <div class = "catalog__card-info-item"><span>Вес: </span><span>53 кг</span></div>
+                        </div>
+                        <div class = "catalog__card-buttons">
+                            <a href = "#" class = "button button_orange catalog__card-button text_button">Подробнее<img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                            <a href = "#" class = "button button_standart catalog__card-button text_button">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "catalog__pagination-block">
+            <a href = "/" class = "button button_standart text_button catalog__return-button"><img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg>Вернуться на главную</a>
+            <div class = "catalog__pagination">
+                <a href = "#" class = "catalog__pagination-button catalog__pagination-prev"><img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+                <div class = "catalog__pagination-links text_descriptor">
+                    <a class = "catalog__pagination-link catalog__pagination-link_active">1</a>
+                    <a class = "catalog__pagination-link">2</a>
+                    <a class = "catalog__pagination-link">3</a>
+                    <img src = "@img/dot.svg">
+                    <a class = "catalog__pagination-link">17</a>
+                </div>
+                <a href = "#" class = "catalog__pagination-button catalog__pagination-next"><img class = "button__arrow" src = "@img/simple-arrow.svg" uk-svg></a>
+            </div>
+        </div>
+        <a href = "#" class = "button button_orange catalog__button-dillers text_button">Где купить</a>
+    </div>
+</section>

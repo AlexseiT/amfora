@@ -1,0 +1,39 @@
+.catalog-text {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        h2{
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &__description {
+        margin-top: 35px;
+    }
+
+    &__paragraph {
+        margin-top: 16px;
+    }
+
+    &__link {
+        margin-top: 55px;
+    }
+}
+
+@include media($mobile) {
+    .catalog-text {
+
+        &__description {
+            margin-top: 12px;
+        }
+    
+        &__paragraph {
+            margin-top: 12px;
+        }
+    
+        &__link {
+            margin-top: 18px;
+        }
+    }
+}

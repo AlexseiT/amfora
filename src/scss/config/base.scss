@@ -5,6 +5,7 @@
 :root {
     --light: #FAF8F6;
     --light-accent: #F3F0EF;
+    --light-accent-other: #F3F0EE;
     --gray: #b9b8b6;
     --opacity-light: #FAF8F64D;
     --dark: #282827;
@@ -26,7 +27,7 @@ html {
 body {
     background-color: var(--light); /*Поменять*/
     overflow-y: hidden;
-    font-family: 'ClearSans';
+    font-family: 'ClearSans', sans-serif;
     line-height: 1.2;
 
     min-height: 100vh;
@@ -90,6 +91,9 @@ a[href*="tel:"] {
 section{
     margin-top: 160px;
     position: relative;
+    &_main{
+        margin-top: 160px; 
+    }
 }
 ul{
     margin: 0;
@@ -283,6 +287,9 @@ textarea{
         width: 700px;
     }
 }*/
+.section_min{
+    margin-top: 60px;
+}
 .base {
     &__cards {
         display: grid;
@@ -382,6 +389,12 @@ textarea{
             padding: 20px 10px 40px;
         }
     }
+    .section_min{
+        margin-top: 50px;
+    }
+}
+button{
+    border-color: transparent;
 }
 .button{
     padding: 16px 20px;
@@ -419,6 +432,26 @@ textarea{
     background-color: transparent;
     opacity: 1;
 }
+.button_transparent{
+    color: var(--light);
+    border: 1px solid var(--light);
+}
+.button_transparent:hover{
+    background-color: transparent;
+    opacity: 0.8;
+}
+.button_transparent-black{
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+.button_transparent-black:hover{
+    background-color: transparent;
+    color: var(--dark);
+    opacity: 0.8;
+}
+.button_transparent-black-opacity{
+    color: var(--gray);
+}
 .button_circle{
     width: 45px;
     height: 45px;
@@ -430,6 +463,13 @@ textarea{
 .button_border:hover{
     background-color: transparent; 
     color: var(--dark);
+}
+.link{
+    text-decoration: underline;
+    color: var(--gray);
+    &:hover{
+        color: var(--orange);
+    }
 }
 .reveal{
 }
@@ -504,6 +544,11 @@ textarea{
     h6{
         font-size: 16px;
     }
+    .section{
+        &_main{
+            margin-top: 150px; 
+        }
+    }
     section{
         margin-top: 90px;
     }
@@ -518,6 +563,9 @@ textarea{
 }
 
 @include media($mobile) {
+    .button{
+        padding: 10px;
+    }
     .button_min-circle{
         width: 30px;
         height: 30px;
@@ -561,9 +609,14 @@ textarea{
             font-size: 14px;
         }
     }
-
+    .section{
+        &_main{
+            margin-top: 90px; 
+        }
+    }
     section{
         margin-top: 50px;
+
     }
 }
 
@@ -609,3 +662,62 @@ textarea{
 @include media($mobile) {
 
 }
+
+
+/*custom*/
+.custom-scroll::-webkit-scrollbar{
+    width: 8px;              
+  }
+  .custom-scroll::-webkit-scrollbar-track{
+    background: transparent;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb{
+    background-color: var(--orange);  
+    border-radius: 25px; 
+    border: 3px solid var(--orange);
+  }
+  
+  .header_white {
+    background-color: var(--light) !important;
+    border-bottom: 1px solid var(--gray) !important;
+  }
+  
+  .header_white .header__logo-wrapper {
+    -webkit-filter: inherit;
+    filter: inherit;
+  }
+  
+  .header_white .header__main-social a {
+    color: var(--dark);
+  }
+  
+  .header_white .header__menu-main a {
+    color: var(--dark);
+  }
+  
+  .header_white .header__burger-line {
+    background-color: var(--dark);
+  }
+  
+  .header_white .header__account {
+    color: var(--dark);
+  }
+  
+  .hero__description-block{
+    margin-bottom: 15%;
+  }
+  
+  .base__card:hover , .information-block__card:hover{
+    opacity: 1;
+  }
+  
+  .base__card:hover .base__img{
+      transition: 0.5s all ease;
+  }
+  
+  @media (max-width: 640.98px) {
+      .hero__description-block{
+          margin-bottom: 35%;
+      }
+  }
+/*custom*/

@@ -1,0 +1,47 @@
+.about {
+    &__container {
+        display: flex;
+        gap:30px;
+        justify-content: space-between;
+    }
+
+    &__text-block {
+        width: 690px;
+    }
+
+    &__paragraph {
+
+    }
+
+    &__button {
+    }
+
+    &__cards-block {
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__card { //!!!!
+        &:last-child{ //!!!!
+            grid-column: 2/1; //!!!!
+            grid-row: 2; //!!!!
+        }
+    }
+
+    &__img-wrapper {
+    }
+
+    &__img {
+    }
+
+    &__card-text {
+    }
+}
+
+@include media($tablet) {
+
+}
+@include media($mobile) {
+
+}
